@@ -1,0 +1,280 @@
+﻿<Window x:Class="HW4_WPF_Vasilchenko.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW4_WPF_Vasilchenko"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="370" Width="720">
+
+
+    <StackPanel>
+
+        <!--Statistics and Options-->
+        <Grid  Height="50" Width="700">
+            <StackPanel Orientation="Horizontal" Background="AliceBlue">
+
+                <!--Statistics-->
+                <Grid Height="50" Width="350" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Speed: " Margin="10 0"/>
+                        <TextBlock Text="0" FontWeight="Bold"/>
+                        <TextBlock Text=" chars/min"/>
+
+                        <TextBlock Text="Fails: " Margin="130 0 0 0"/>
+                        <TextBlock Text="0" FontWeight="Bold"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <!--Options-->
+                <Grid Height="50" Width="350" HorizontalAlignment="Right">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Height="25" VerticalAlignment="Top">
+                            <TextBlock Text="Difficulty: "/>
+                            <Label x:Name="lblDifficulty" Content="5" FontWeight="Bold" Padding="5 0"/>
+                            <Slider x:Name="sldrDifficulty" Minimum="1" Maximum="20" Width="100" Margin="10 0 10 0" />
+                            <CheckBox Content="Case Sensitive"/>
+                        </StackPanel>
+                        <Grid>
+                            <Button x:Name="btnStart" Height="20" Width="100" Margin="20 0 0 0" HorizontalAlignment="Left" >Start</Button>
+                            <Button x:Name="btnStop" IsEnabled="False" Height="20" Width="100">Stop</Button>
+                        </Grid>
+
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <!--Task Window-->
+        <Grid Background="#FF96EFEF" Height="50" Width="700">
+
+        </Grid>
+
+        <!--Keyboard-->
+        <Grid Height="230" Width="700" Background="#FFC3C1C1">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Button}" x:Key="RoundButton">
+                    <Style.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                            <Setter Property="Height" Value="40"/>
+                        </Style>
+                    </Style.Resources>
+                </Style>
+            </Grid.Resources>
+            
+            
+
+            <StackPanel Orientation="Vertical">
+                <!--1st row of keys-->
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepPink" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">`</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepPink" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">1</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepPink" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">2</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Yellow" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">3</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="YellowGreen" Margin="5 0 0 5" Width="40" 
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">4</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepSkyBlue" Margin="5 0 0 5" Width="40" 
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">5</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepSkyBlue" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">6</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Purple" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">7</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Purple" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">8</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Coral" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">9</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="GreenYellow" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">0</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="SeaGreen" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">-</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="SeaGreen" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">=</Button>
+                    
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="100" 
+                            FontFamily="Arial" FontSize="14">Backspace</Button>
+                </StackPanel>
+
+                <!--2nd row of keys-->
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="65" 
+                            FontFamily="Arial" FontSize="14" >Tab</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepPink" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">q</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Yellow" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">w</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="YellowGreen" Margin="5 0 0 5" Width="40" 
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">e</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepSkyBlue" Margin="5 0 0 5" Width="40" 
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">r</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepSkyBlue" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">t</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Purple" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">y</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Purple" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">u</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Coral" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">i</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="GreenYellow" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">o</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="SeaGreen" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">p</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="SeaGreen" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">[</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="SeaGreen" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">]</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="SeaGreen" Margin="5 0 0 5" Width="75"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">\</Button>
+                    
+                </StackPanel>
+                
+                <!--3rd row of keys-->
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="85" 
+                            FontFamily="Arial" FontSize="14" >Caps Lock</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepPink" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">a</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Yellow" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">s</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="YellowGreen" Margin="5 0 0 5" Width="40" 
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">d</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepSkyBlue" Margin="5 0 0 5" Width="40" 
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">f</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="DeepSkyBlue" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">g</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Purple" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">h</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Purple" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">j</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Coral" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">k</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="GreenYellow" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">l</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="SeaGreen" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">;</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="SeaGreen" Margin="5 0 0 5" Width="40"
+                            FontFamily="Arial" FontSize="18" FontWeight="Bold">'</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="100" 
+                            FontFamily="Arial" FontSize="14" >Enter</Button>
+                </StackPanel>
+                
+                <!--4th row of keys-->
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="110" 
+                            FontFamily="Arial" FontSize="14" >Shift</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="DeepPink" Margin="5 0 0 5" Width="40"
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">z</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="Yellow" Margin="5 0 0 5" Width="40"
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">x</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="YellowGreen" Margin="5 0 0 5" Width="40" 
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">c</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="DeepSkyBlue" Margin="5 0 0 5" Width="40" 
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">v</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="DeepSkyBlue" Margin="5 0 0 5" Width="40"
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">b</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="Purple" Margin="5 0 0 5" Width="40"
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">n</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="Purple" Margin="5 0 0 5" Width="40"
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">m</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="Coral" Margin="5 0 0 5" Width="40"
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">,</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="GreenYellow" Margin="5 0 0 5" Width="40"
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">.</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="SeaGreen" Margin="5 0 0 5" Width="40"
+                        FontFamily="Arial" FontSize="18" FontWeight="Bold">/</Button>
+                    
+                    <Button Style="{DynamicResource RoundButton}" 
+                        Background="Gray" Margin="5 0 0 5" Width="120" 
+                        FontFamily="Arial" FontSize="14" >Shift</Button>
+
+                    </StackPanel>
+                
+                <!--5th row of keys-->
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="65" 
+                            FontFamily="Arial" FontSize="14" >Ctrl</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="65" 
+                            FontFamily="Arial" FontSize="14" >Win</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="65" 
+                            FontFamily="Arial" FontSize="14" >Alt</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="LightCoral" Margin="5 0 0 5" Width="265" 
+                            FontFamily="Arial" FontSize="14" >Space</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="65" 
+                            FontFamily="Arial" FontSize="14" >Alt</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="65" 
+                            FontFamily="Arial" FontSize="14" >Win</Button>
+                    <Button Style="{DynamicResource RoundButton}" 
+                            Background="Gray" Margin="5 0 0 5" Width="65" 
+                            FontFamily="Arial" FontSize="14" >Ctrl</Button>
+                </StackPanel>
+            </StackPanel>
+            
+            
+            
+        </Grid>
+        
+    </StackPanel>
+</Window>
